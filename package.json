@@ -1,0 +1,44 @@
+{
+  "name": "@tac/routes",
+  "version": "0.0.1",
+  "description": "a route helper based on react-routes",
+  "main": "index.js",
+  "scripts": {
+    "dev": "plu dev --src feature",
+    "build": "plu build"
+  },
+  "author": "alfred.qiu",
+  "license": "MIT",
+  "dependencies": {
+    "history": "^4.9.0",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^5.1.9",
+    "@storybook/addon-info": "^5.1.9",
+    "@storybook/addon-links": "^5.1.9",
+    "@storybook/core": "^5.1.9",
+    "@storybook/react": "^5.1.9",
+    "@types/react": "^16.8.24",
+    "@types/react-dom": "^16.8.5",
+    "@types/react-router-dom": "^4.3.4",
+    "autoprefixer": "^9.6.1",
+    "babel-plugin-import": "^1.6.0",
+    "eslint": "^6.1.0",
+    "eslint-config-alloy": "^2.0.5",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "husky": "^3.0.1",
+    "less": "^3.9.0",
+    "less-loader": "^5.0.0",
+    "lint-staged": "^9.2.1",
+    "postcss-loader": "^3.0.0",
+    "react": "^16.8.6",
+    "react-docgen-typescript-loader": "^3.1.0",
+    "react-dom": "^16.8.6",
+    "style-loader": "^0.23.1",
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.3"
+  }
+}
