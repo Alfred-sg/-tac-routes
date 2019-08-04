@@ -2,7 +2,6 @@ import React from "react";
 import { Router as ReactRouter } from "react-router-dom";
 import { createBrowserHistory, createHashHistory, createMemoryHistory } from "history";
 import AuthorityContext from "../context/AuthorityContext";
-import LazyContext from "../context/LazyContext";
 import { RouterProps } from "../types";
 
 const createHistoryMap = {
@@ -16,7 +15,7 @@ const createHistoryMap = {
  * @param {object} props
  */
 function Router({
-  mode = "hash", 
+  mode = "hash",
   lazy = false,
   forceRefresh = false,
   getUserConfirmation,
@@ -33,13 +32,11 @@ function Router({
     basename
   });
   (window as any).tac_history = history;
-    
+
   return (
     <ReactRouter history={history}>
       <AuthorityContext.Provider value={authority}>
-        <LazyContext.Provider value={lazy}>
-          {children}
-        </LazyContext.Provider>
+        {children}
       </AuthorityContext.Provider>
     </ReactRouter>
   );

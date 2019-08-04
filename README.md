@@ -21,11 +21,12 @@ const routes = [
   },
   {
     path: "/create",
+    auth: ["right"],// 权限
     component: () => <div>create</div>
   }
 ];
 
-<Router>
+<Router authority={auth => true}>
   <Routes routes={routes} />
 </Router>
 ```
@@ -55,10 +56,19 @@ window.tac_history.push("/detail");
 ### Router
 
 * mode 可设置 hash, memory, browser。
+* authority 权限校验函数
 
 ### Routes
 
 * routes 初始化路由。
+
+### route
+
+* path 匹配路径。
+* redirect 重定向路径等。
+* auth 所需权限。
+* component 渲染组件。
+* children 子路由。
 
 ### router
 

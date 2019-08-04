@@ -1,10 +1,10 @@
 interface Node {
-  children?: Array<Node>,
-  [propName: string]: any
+  children?: Array<Node>;
+  [propName: string]: any;
 }
 
 interface NewNode {
-  [propName: string]: any
+  [propName: string]: any;
 }
 
 /**
@@ -19,11 +19,11 @@ function loop(arr: Array<Node>, transform: Function, level: number): Array<NewNo
     if (!node) return;
     if (node.children && node.children.length) {
       let newChildren = loop(node.children, transform, level + 1);
-      let newNode: NewNode = transform({ ...node, level }, newChildren);
-      result.push(newNode);
+      let newNode: NewNode | undefined = transform({ ...node, level }, newChildren);
+      if (newNode) result.push(newNode);
     } else {
-      let newNode = transform({ ...node, level });
-      result.push(newNode);
+      let newNode: NewNode | undefined = transform({ ...node, level });
+      if (newNode) result.push(newNode);
     }
   });
 

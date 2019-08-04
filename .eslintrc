@@ -1,0 +1,27 @@
+{
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "extends": [
+    "eslint-config-alloy/react",
+    "eslint-config-alloy/typescript",
+    "plugin:prettier/recommended"
+  ],
+  "globals": {},
+  "rules": {
+    "prettier/prettier": ["error", {
+      "printWidth": 120,
+      "tabWidth": 2,
+      "jsxBrackSameLine": false
+    }],
+    "indent": "off",
+    "react/jsx-indent-props": "off",
+    "react/jsx-curly-newline": "off",
+    "react/jsx-indent": "off",
+    "eqeqeq": "off",
+    "react/jsx-fragments": "off",
+    "@typescript-eslint/indent": "off",
+  }
+}

@@ -6,7 +6,7 @@ import travser from "../utils/travser";
  */
 class Route {
   routes: Array<RouteNode> = [];
-  fltternRoutes: {[key: string]: any} = {};
+  fltternRoutes: { [key: string]: any } = {};
   subs: Array<Function> = [];
 
   setRoutes(routes: Array<RouteNode>) {
@@ -19,10 +19,10 @@ class Route {
    * @param route 路由
    */
   addRoute(route: RouteNode) {
-    if ( !this.routes.some(r => route.path === r.path) ){
+    if (!this.routes.some(r => route.path === r.path)) {
       this.routes.push(route);
       this.notify();
-    };
+    }
   }
 
   /**
@@ -31,10 +31,10 @@ class Route {
    */
   addRoutes(routes: Array<RouteNode>) {
     const added = routes.some(route => {
-      if ( !this.routes.some(r => route.path === r.path) ){
+      if (!this.routes.some(r => route.path === r.path)) {
         this.routes.push(route);
         return true;
-      };
+      }
       return false;
     });
 
@@ -55,20 +55,20 @@ class Route {
    * 绑定监听器
    * @param sub 监听器
    */
-  subscribe(sub: Function){
+  subscribe(sub: Function) {
     this.subs.push(sub);
     return {
       remove: () => {
         const index = this.subs.indexOf(sub);
         this.subs.splice(index, 1);
       }
-    }
+    };
   }
 
   /**
    * 触发监听器
    */
-  notify(){
+  notify() {
     // 扁平化
     travser(this.routes, (node: RouteNode) => {
       this.fltternRoutes[node.path] = node;

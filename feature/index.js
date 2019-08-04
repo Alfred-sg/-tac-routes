@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
-import { Router, Routes, router, dynamic } from "@tac/router";
+import { Router, Routes, router, dynamic } from "tac-router";
 
 const routes = [
   {
@@ -14,6 +14,7 @@ const routes = [
   },
   {
     path: "/create",
+    auth: ["login"],
     component: () => <div>create</div>
   }
 ];
@@ -24,7 +25,7 @@ const detailRoute = {
 }
 
 render(
-  <Router>
+  <Router authority={(auth) => {console.log(auth);return true;}}>
     <button onClick={() => window.tac_history.push("/list")}>列表</button>
     <button onClick={() => window.tac_history.push("/create")}>新建</button>
     <button onClick={() => {
