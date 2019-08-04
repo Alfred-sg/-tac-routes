@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
-import { Router, Routes, router } from "@tac/routes";
+import { Router, Routes, router, dynamic } from "@tac/router";
 
 const routes = [
   {
@@ -10,7 +10,7 @@ const routes = [
   },
   {
     path: "/list",
-    component: () => <div>list</div>
+    component: dynamic(import("./components/list"))
   },
   {
     path: "/create",

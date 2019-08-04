@@ -1,5 +1,5 @@
 import React from "react";
-import { Router as ReactRouter } from "react-router";
+import { Router as ReactRouter } from "react-router-dom";
 import { createBrowserHistory, createHashHistory, createMemoryHistory } from "history";
 import AuthorityContext from "../context/AuthorityContext";
 import LazyContext from "../context/LazyContext";

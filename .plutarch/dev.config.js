@@ -1,6 +1,6 @@
 module.exports = {
   template: '../feature',
   alias: {
-    "@tac/routes": 'src'
+    "@tac/router": 'src'
   }
 };

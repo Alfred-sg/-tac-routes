@@ -1,6 +1,6 @@
 module.exports = {
   output: {
-    library: 'lib',
+    library: '@tac/router',
     libraryTarget: 'umd'
   },
   externals: {
